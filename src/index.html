@@ -4,9 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
     <title>Wszystkie Emocje Dozwolone</title>
   </head>
   <body>
-    Hello world
+    <header>
+      <div class="header__top-bar">
+        <img class="header__logo" src="./img/logo-top.svg" alt="logo" />
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="header__nav">
+        <svg class="shape shape--nav" viewBox="0 0 320 376.06">
+          <path
+            class="path--nav"
+            d="M0,359s11,8,33,16,19-2,53-3,38-1,57-1,27-2,51-3,24,8,61,8,65-12,65-12V0H0Z"
+          />
+        </svg>
+        <ul class="nav-list">
+          <li class="nav-list--home"><a href="#">Home</a></li>
+          <li class="nav-list--about"><a href="#">O nas</a></li>
+          <li class="nav-list--mission"><a href="#">Nasza misja</a></li>
+          <li class="nav-list--offer"><a href="#">Nasza oferta</a></li>
+          <li class="nav-list--contact"><a href="#">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="main-wrapper">
+      <div class="background-graphics"></div>
+      <main>
+        <section id="home"></section>
+        <section id="about"></section>
+        <section id="mission"></section>
+        <section id="offer"></section>
+        <section id="contact"></section>
+      </main>
+      <footer></footer>
+    </div>
+    <script src="bundle.js"></script>
   </body>
 </html>
