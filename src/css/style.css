@@ -25,22 +25,28 @@ button {
   --color-background: #efe8d6;
   --color-button: #dd4e30;
 }
-
+header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 70px;
+  padding: 15px;
+  background-color: var(--color-background);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
 .header__top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 100%;
   width: 100%;
-  padding: 15px;
-  background-color: var(--color-background);
-  font-size: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  max-width: 1200px;
   z-index: 100;
 }
-
 .hamburger {
   width: 40px;
   height: 40px;
@@ -50,6 +56,7 @@ button {
   flex-direction: column;
   padding: 8px;
   justify-content: space-around;
+  z-index: 1000;
 }
 .hamburger span {
   background-color: var(--color-text-dark);
@@ -73,20 +80,39 @@ button {
 
 .header__nav {
   position: fixed;
-  top: 60px;
-  left: 0px;
-  z-index: 10;
+  left: 0;
+  top: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: height 0ms 400ms, opacity 400ms 0ms;
 }
-.shape--nav {
-  fill: var(--color-background);
+.header__nav--active {
+  height: 100vh;
+  opacity: 1;
+  transition: height 0ms 0ms, opacity 600ms 0ms;
+}
+.menu-overlay {
+  position: fixed;
   width: 100vw;
-  position: absolute;
+  background-color: var(--color-background);
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: height 0ms 400ms, opacity 400ms 0ms;
 }
+.menu-overlay--active {
+  height: 100vh;
+  opacity: 1;
+  transition: height 0ms 0ms, opacity 600ms 0ms;
+}
+
 .nav-list {
-  position: relative;
-  top: 30px;
-  z-index: 20;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -101,6 +127,360 @@ button {
   color: var(--color-text-dark);
   font-size: 2rem;
   display: block;
+  position: relative;
   line-height: 2.8;
   text-align: center;
+}
+
+/* Start of main style */
+
+main {
+  width: 100%;
+  background-color: var(--color-background);
+  overflow-x: hidden;
+}
+section {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.section__container {
+  z-index: 2;
+}
+.section__heading {
+  font-family: Montserrat, sans-serif;
+  font-size: 2.4rem;
+}
+.section__text {
+  font-family: Cardo, serif;
+  font-size: 1.3rem;
+}
+.btn {
+  height: 30px;
+  border-radius: 15px;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: montserrat, sans-serif;
+  padding: 0 15px;
+}
+.photo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+/* Home section */
+.section--home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 650px;
+}
+.shape {
+  position: absolute;
+}
+.shape1 {
+  top: -50px;
+  left: -120px;
+  transform-origin: top left;
+  transform: scale(0.4);
+}
+.shape2 {
+  bottom: -180px;
+  right: -350px;
+  transform-origin: bottom right;
+  transform: scale(0.45);
+}
+.section__container--home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section__heading--home {
+  width: 150px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.section__text--home {
+  width: 280px;
+  text-align: center;
+}
+.btn--offer {
+  background-color: var(--color-button);
+  transform: translateY(30px);
+}
+/* About section */
+.section--about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  padding: 80px 50px 50px 50px;
+}
+.section__container--about {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "heading heading"
+    "text text"
+    "photo photo"
+    "button button";
+}
+.section__heading--about {
+  grid-area: heading;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.section__text--about {
+  grid-area: text;
+  text-align: center;
+}
+.photo-container--about {
+  position: relative;
+  grid-area: photo;
+  justify-self: center;
+  align-self: center;
+}
+.photo--about-together {
+  height: 120px;
+  filter: drop-shadow(30px 40px 0 #f4c366);
+}
+
+.btn--about {
+  grid-area: button;
+  background-color: var(--color-button);
+  justify-self: center;
+}
+
+/* Start of media queries */
+
+@media only screen and (min-width: 600px) {
+  /* Header and menu */
+  header {
+    height: 70px;
+    padding: 15px;
+  }
+  .hamburger {
+    display: none;
+  }
+  .header__nav {
+    position: static;
+    height: 100%;
+    width: 100%;
+    max-width: 750px;
+    margin-left: 30px;
+    opacity: 1;
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .nav-list li {
+    width: auto;
+    margin: 0 10px;
+  }
+  .nav-list li a {
+    font-size: 1.6rem;
+  }
+  .nav-list li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 0%;
+    height: 2px;
+    transition: width 0.3s ease;
+    background-color: var(--color-text-dark);
+  }
+  .nav-list li a:hover::after {
+    width: 100%;
+  }
+  .menu-overlay {
+    display: none;
+  }
+  /* Main section */
+  section {
+    max-height: 1024px;
+  }
+  .section__heading {
+    font-size: 3rem;
+  }
+  .section__text {
+    font-size: 1.6rem;
+  }
+  .btn {
+    font-size: 1.6rem;
+    height: 40px;
+    border-radius: 20px;
+  }
+  /* Home section */
+  .section__heading--home {
+    width: 450px;
+  }
+  .section__text--home {
+    width: 520px;
+  }
+  .shape1 {
+    top: -50px;
+    left: -120px;
+    transform: scale(0.6);
+  }
+  .shape2 {
+    bottom: -120px;
+    right: -280px;
+    transform: scale(0.45);
+  }
+  /* About section */
+  .section--about {
+    padding: 90px 90px 50px 90px;
+  }
+  .section__container--about {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "heading heading heading photo photo"
+      "text text text photo photo"
+      "button . . photo photo";
+  }
+  .section__heading--about {
+    text-align: left;
+  }
+  .section__text--about {
+    text-align: left;
+  }
+  .btn--about {
+    justify-self: left;
+  }
+  .photo-container--about {
+    position: relative;
+    top: 50px;
+  }
+  .photo--about-together {
+    height: 350px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* Heading and menu */
+  header {
+    height: 100px;
+    padding: 25px;
+  }
+  .header__nav {
+    margin-left: 60px;
+  }
+  .nav-list li a {
+    font-size: 2rem;
+  }
+  /* Main section */
+  section {
+    max-height: 1200px;
+  }
+  .section__heading {
+    font-size: 4.2rem;
+  }
+  .section__text {
+    font-size: 1.9rem;
+  }
+  .btn {
+    font-size: 1.8rem;
+    height: 46px;
+    border-radius: 23px;
+  }
+  /* Home section */
+
+  .section__heading--home {
+    width: 650px;
+  }
+  .section__text--home {
+    width: 600px;
+  }
+  .shape1 {
+    top: -80px;
+    left: -130px;
+    transform: scale(0.7);
+  }
+  .shape2 {
+    bottom: -150px;
+    right: -280px;
+    transform: scale(0.5);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  /* Main section */
+  .section__heading {
+    font-size: 5.2rem;
+  }
+  .section__text {
+    font-size: 2.2rem;
+  }
+  .btn {
+    font-size: 2.2rem;
+    height: 54px;
+    border-radius: 27px;
+  }
+  /* Home section */
+  .section__heading--home {
+    width: 860px;
+  }
+  .section__text--home {
+    width: 640px;
+  }
+  .shape1 {
+    top: -100px;
+    left: -280px;
+    transform: scale(0.8);
+  }
+  .shape2 {
+    bottom: -200px;
+    right: -380px;
+    transform: scale(0.7);
+  }
+  /* About section */
+  .section--about {
+    padding: 115px;
+  }
+  .photo--about-together {
+    height: 400px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .shape1 {
+    top: -100px;
+    left: -400px;
+    transform: scale(1);
+  }
+  .shape2 {
+    bottom: -450px;
+    right: -500px;
+    transform: scale(0.8);
+  }
+  /* About section */
+  .section__container--about {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      ". heading heading heading photo photo photo"
+      ". text text text photo photo photo"
+      ". button . . photo photo photo";
+  }
 }

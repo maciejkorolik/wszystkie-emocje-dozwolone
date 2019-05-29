@@ -33,6 +33,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "animejs": "^3.0.1"
+    "animejs": "^3.0.1",
+    "rellax": "^1.9.1"
   }
 }
