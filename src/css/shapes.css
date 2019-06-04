@@ -1,0 +1,72 @@
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.shape {
+  position: absolute;
+}
+.shape1 {
+  top: -50px;
+  left: -120px;
+  transform-origin: top left;
+  transform: scale(0.4);
+}
+.shape2 {
+  bottom: -180px;
+  right: -350px;
+  transform-origin: bottom right;
+  transform: scale(0.45);
+}
+/* Start of media queries */
+
+@media only screen and (min-width: 600px) {
+  .shape1 {
+    top: -50px;
+    left: -120px;
+    transform: scale(0.6);
+  }
+  .shape2 {
+    bottom: -120px;
+    right: -280px;
+    transform: scale(0.45);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .shape1 {
+    top: -80px;
+    left: -130px;
+    transform: scale(0.7);
+  }
+  .shape2 {
+    bottom: -150px;
+    right: -280px;
+    transform: scale(0.5);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .shape1 {
+    top: -100px;
+    left: -280px;
+    transform: scale(0.8);
+  }
+  .shape2 {
+    bottom: -200px;
+    right: -380px;
+    transform: scale(0.7);
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .shape1 {
+    top: -100px;
+    left: -400px;
+    transform: scale(1);
+  }
+  .shape2 {
+    bottom: -450px;
+    right: -500px;
+    transform: scale(0.8);
+  }
+}
