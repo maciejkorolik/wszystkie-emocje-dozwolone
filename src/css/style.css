@@ -13,8 +13,6 @@ button:focus,
 a:focus {
   outline: none;
 }
-button {
-}
 
 :root {
   scroll-behavior: smooth;
@@ -32,7 +30,7 @@ header {
   height: 70px;
   padding: 15px;
   background-color: var(--color-background);
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   position: fixed;
   top: 0;
   left: 0;
@@ -240,6 +238,8 @@ section {
   align-self: center;
 }
 .photo--about-together {
+  position: relative;
+  z-index: 1000;
   height: 120px;
   filter: drop-shadow(7px 11px 0 #f4c366);
 }
@@ -248,6 +248,7 @@ section {
   grid-area: button;
   background-color: var(--color-button);
   justify-self: center;
+  margin-top: 40px;
 }
 /* About details */
 .section__container--about-details {
@@ -293,7 +294,44 @@ section {
 }
 .photo--about-ola,
 .photo--about-maja {
-  /* height: 120px; */
+  max-height: 160px;
+}
+
+/* Mission section */
+
+.section--mission {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 650px;
+}
+
+.section__container--mission {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section__heading--mission {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.section__text--mission {
+  width: 280px;
+  text-align: center;
+}
+.mission-footer {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.8rem;
+  margin-top: 30px;
+}
+.mission-footer span {
+  margin-right: 20px;
+}
+.mission-footer span:last-child {
+  margin-right: 0;
 }
 
 /* Start of media queries */
@@ -407,6 +445,18 @@ section {
       "heading2 heading2 heading2 photo2 photo2"
       "text2 text2 text2 photo2 photo2";
   }
+  .photo--about-ola,
+  .photo--about-maja {
+    max-height: 400px;
+  }
+  /* Mission section */
+  .section__text--mission {
+    width: 520px;
+  }
+  .mission-footer {
+    font-size: 2.5rem;
+    margin-top: 40px;
+  }
 }
 @media only screen and (min-width: 768px) {
   /* Heading and menu */
@@ -443,6 +493,14 @@ section {
   .section__text--home {
     width: 600px;
   }
+  /* Mission section */
+  .section__text--mission {
+    width: 600px;
+  }
+  .mission-footer {
+    font-size: 3.4rem;
+    margin-top: 50px;
+  }
 }
 @media only screen and (min-width: 1024px) {
   /* Main section */
@@ -472,6 +530,11 @@ section {
   .photo--about-together {
     height: 400px;
     filter: drop-shadow(30px 40px 0 #f4c366);
+  }
+
+  /* Mission section */
+  .section__text--mission {
+    width: 800px;
   }
 }
 @media only screen and (min-width: 1400px) {

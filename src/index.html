@@ -27,9 +27,11 @@
           <ul class="nav-list">
             <li class="nav-list--home"><a href="#home">Home</a></li>
             <li class="nav-list--about"><a href="#about">O nas</a></li>
-            <li class="nav-list--mission"><a href="#">Nasza misja</a></li>
-            <li class="nav-list--offer"><a href="#">Nasza oferta</a></li>
-            <li class="nav-list--contact"><a href="#">Kontakt</a></li>
+            <li class="nav-list--mission">
+              <a href="#mission">Nasza misja</a>
+            </li>
+            <li class="nav-list--offer"><a href="#offer">Nasza oferta</a></li>
+            <li class="nav-list--contact"><a href="#contact">Kontakt</a></li>
           </ul>
         </nav>
       </div>
@@ -75,6 +77,13 @@
               alt="Zdjęcie Oli i Mai"
               class="photo photo--about-together"
             />
+            <!-- <div class="background-shapes">
+              <img
+                src="./img/shapes/shape4-lines-under-img.svg"
+                alt=""
+                class="shape shape3"
+              />
+            </div> -->
           </div>
 
           <button class="btn btn--about">Kontakt</button>
@@ -133,9 +142,58 @@
           </div>
         </div>
       </section>
-      <section id="mission"></section>
-      <section id="offer"></section>
-      <section id="contact"></section>
+      <section id="mission" class="section--mission">
+        <div class="background-shapes" data-rellax-speed="2">
+          <img src="./img/shapes/shape5.svg" alt="" class="shape shape4" />
+        </div>
+        <div class="background-shapes" data-rellax-speed="-2">
+          <img src="./img/shapes/shape6.svg" alt="" class="shape shape5" />
+        </div>
+        <div class="background-shapes" data-rellax-speed="-2">
+          <img src="./img/shapes/shape2.svg" alt="" class="shape shape6" />
+        </div>
+        <div class="section__container section__container--mission">
+          <h2 class="section__heading section__heading--mission">
+            Nasza misja
+          </h2>
+          <p class="section__text section__text--mission">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          </p>
+          <h3 class="mission-footer">
+            <span>empatia</span><span>uczucia</span><span>uważność</span>
+          </h3>
+        </div>
+      </section>
+      <section id="offer">
+        <div class="section__container section__container--offer">
+          <h2 class="section__heading section__heading--offer">
+            Nasza oferta
+          </h2>
+          <p class="section__text section__text--offer">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          </p>
+          <ul class="offer-list">
+            <li class="offer-list__item">Oferta 1</li>
+            <li class="offer-list__item">Oferta 2</li>
+            <li class="offer-list__item">Oferta 3</li>
+          </ul>
+        </div>
+      </section>
+      <section id="contact">
+        <div class="section__container section__container--contact">
+          <h2 class="section__heading section__heading--contact">
+            Kontakt
+          </h2>
+        </div>
+      </section>
     </main>
     <footer></footer>
     <script src="bundle.js"></script>
