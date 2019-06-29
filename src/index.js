@@ -4,7 +4,7 @@ import "./index.html";
 import Rellax from "rellax";
 import anime from "animejs/lib/anime.es.js";
 
-const rellax = new Rellax(".rellax");
+const rellax = new Rellax(".rellax", { center: true });
 
 let offerVisible = false;
 
@@ -64,11 +64,27 @@ function revealDetails(target) {
   setTimeout(() => {
     offerDetails.classList.add("offer-details--active");
   }, 300);
-  offerDetails.addEventListener("click", event => {
-    event.currentTarget.classList.remove("offer-details--active");
-    offerVisible = false;
+  offerDetails.addEventListener("click", hideOfferDetails);
+}
+
+// function hideOfferDetails(target) {
+//   if (offerVisible) {
+//     const currentOffer = document.querySelector(".offer-details--active");
+//     target.addEventListener("click", () => {
+//       currentOffer.classList.remove("offer-details--active");
+//     });
+//     document.body.style.overflow = "visible";
+//     console.log("done");
+//   }
+// }
+
+function hideOfferDetails() {
+  if (offerVisible) {
+    document.querySelectorAll(".offer-details").forEach(el => {
+      el.classList.remove("offer-details--active");
+    });
     document.body.style.overflow = "visible";
-  });
+  }
 }
 
 offerButtons.forEach(el =>
@@ -96,5 +112,6 @@ menuTriggers.forEach(el =>
     document
       .querySelector(".menu-overlay")
       .classList.toggle("menu-overlay--active");
+    hideOfferDetails();
   })
 );
