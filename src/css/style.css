@@ -38,8 +38,6 @@ a {
 }
 
 body {
-  display: flex;
-  justify-content: center;
   background-color: var(--color-background);
 }
 
@@ -154,7 +152,7 @@ header {
 
 main {
   width: 100%;
-  max-width: 1400px;
+  margin: auto;
   overflow: hidden;
 }
 section {
@@ -361,7 +359,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   padding: 80px 50px 50px 50px;
 }
 .section__heading--offer {
@@ -586,7 +584,7 @@ section {
   }
   .mission-footer {
     font-size: 2.5rem;
-    margin-top: 40px;
+    margin-top: 100px;
   }
   .mission-footer span {
     margin-right: 30px;
@@ -649,17 +647,22 @@ section {
     width: 600px;
   }
   /* Mission section */
+  .section--mission {
+    max-height: 90vw;
+  }
   .section__text--mission {
     width: 600px;
   }
   .mission-footer {
     font-size: 3.4rem;
-    margin-top: 50px;
   }
   .mission-footer span {
     margin-right: 50px;
   }
   /* Offer section  */
+  .section--offer {
+    max-height: 90vw;
+  }
   .btn--offer {
     font-size: 2rem;
   }
@@ -703,9 +706,6 @@ section {
   }
 }
 @media only screen and (min-width: 1400px) {
-  main {
-    overflow: visible;
-  }
   /* About section */
   .section__container--about {
     grid-template-columns: repeat(7, 1fr);
