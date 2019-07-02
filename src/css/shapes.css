@@ -50,7 +50,7 @@
 }
 /* Start of media queries */
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (orientation: portrait) {
   .shape2 {
     bottom: -65vw;
     right: -90vw;
@@ -62,16 +62,17 @@
     transform: scale(0.45);
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation: portrait) {
   .shape1 {
-    top: -80px;
-    left: -130px;
-    transform: scale(0.7);
+    top: -17vw;
+    left: -35vw;
+    transform-origin: top left;
+    width: 110vw;
   }
   .shape2 {
-    bottom: -150px;
-    right: -280px;
-    transform: scale(0.5);
+    bottom: -40vw;
+    right: -70vw;
+    width: 100vw;
   }
   .shape6 {
     bottom: -150px;
