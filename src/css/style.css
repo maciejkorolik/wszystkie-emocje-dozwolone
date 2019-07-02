@@ -508,6 +508,9 @@ section {
   .nav-list li a:hover::after {
     width: 100%;
   }
+  .nav-list li.active a::after {
+    width: 100%;
+  }
   .menu-overlay {
     display: none;
   }

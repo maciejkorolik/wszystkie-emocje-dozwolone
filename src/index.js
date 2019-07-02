@@ -3,8 +3,12 @@ import "./css/shapes.css";
 import "./index.html";
 import Rellax from "rellax";
 import anime from "animejs/lib/anime.es.js";
+import MenuSpy from "menuspy";
 
 const rellax = new Rellax(".rellax", { center: true });
+
+const navigation = document.querySelector(".header__nav");
+const menuspy = new MenuSpy(navigation);
 
 let offerVisible = false;
 
