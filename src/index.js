@@ -83,6 +83,7 @@ function hideOfferDetails() {
     document.querySelectorAll(".offer-details").forEach(el => {
       el.classList.remove("offer-details--active");
     });
+    offerVisible = false;
     document.body.style.overflow = "visible";
   }
 }
